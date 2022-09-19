@@ -1,2 +1,4 @@
 a = input()
-print(a)
+b = 123
+c = a + b
+print(c)
