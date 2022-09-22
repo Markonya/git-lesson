@@ -1,42 +1,55 @@
-import math
+task = input("Введите задачу = ")
 
-integer1 = int(input("Введите число 1 = "))
-integer2 = int(input("Введите число 2 = "))
 
-action = int(input("Введите команду "))
+if task.find("#"):
+    result1 = eval(task.replace("#", "%"))
+    print(str(task) + " => " + str(result1))
+else:
+    pass
 
-if action == 1:
-    result1 = integer2 % integer1
-    print(str(integer1) + "#" + str(integer2) + " => " + str(result1))
-elif action == 2:
-    res1 = 0
-    res2 = 0
+# как следующее сделать не понимаю(((((
+# if task.find("!"):
+#     first, second = task.split("!")
+#     suma1 = 0
+#     suma2 = 0
+#     first2 = int(first)
+#     second2 = int(second)
+#     while first2 > 0:
+#         digit1 = first2 % 10
+#         suma1 = int(suma1) + int(digit1)
+#         first2 = first2 // 10
+#
+#     while second2:
+#         digit2 = second2 % 10
+#         suma2 = suma2 + digit2
+#         first2 = first2 // 10
+#
+#     if suma1 == suma2:
+#         print(str(first) + "!" + str(second) + " => " + str(first))
+#     elif suma1 > suma2:
+#         print(str(first) + "!" + str(second) + " => " + str(first))
+#     else:
+#         print(str(first) + "!" + str(second) + " => " + str(second))
 
-    while integer1 and integer2:
-        res1 += integer1 % 10
-        integer1 //= 10
-        res2 += integer2 % 10
-        integer2 //= 10
-    if res1 == res2:
-        print("результат одинаков")
-    elif res1 > res2:
-        print(str(integer1) + "$" + str(integer2) + " => " + str(integer1))
+if task.find("@"):
+    first, second = task.split("@")
+    if second == first:
+        print(str(first) + "@" + str(second) + " => " + str(first))
+    elif second > first:
+        print(str(first) + "@" + str(second) + " => " + str(second))
     else:
-        print(str(integer1) + "$" + str(integer2) + " => " + str(integer2))
+        print(str(first) + "@" + str(second) + " => " + str(first))
+else:
+    pass
 
-elif action == 3:
-        if integer2 == integer1:
-            print("Числа равны")
-        elif integer2 > integer1:
-            print(str(integer1) + "@" + str(integer2) + " => " + str(integer2))
-        else:
-            print(str(integer1) + "@" + str(integer2) + " => " + str(integer1))
-elif action == 4:
-     if len(str(integer1)) == len(str(integer1)):
-         print(str(integer1) + "$" + str(integer2) + " => " + str(integer1))
-     elif len(str(integer1)) > len(str(integer1)):
-         print(str(integer1) + "$" + str(integer2) + " => " + str(integer1))
-     else:
-         print(str(integer1) + "$" + str(integer2) + " => " + str(integer2))
+
+if task.find("$"):
+    first, second = task.split("$")
+    if len(first) == len(second):
+        print(str(first) + "$" + str(second) + " => " + str(first))
+    elif len(second) > len(first):
+        print(str(first) + "$" + str(second) + " => " + str(second))
+    else:
+        print(str(first) + "$" + str(second) + " => " + str(first))
 else:
     print("нет такой команды")
