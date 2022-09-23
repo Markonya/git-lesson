@@ -6,15 +6,12 @@ if "#" in task:
 
 if "!" in task:
     first, second = task.split("!")
-    first_str = list(first)
-    first_num = map(int, first_str)
-    sum1 = sum(first_num)
-    print(sum1)
 
-    second_str = list(second)
-    second_num = map(int, second_str)
+    first_num = map(int, first)
+    sum1 = sum(first_num)
+
+    second_num = map(int, second)
     sum2 = sum(second_num)
-    print(sum2)
 
     if sum1 == sum2:
         print(str(first) + "!" + str(second) + " => " + str(first))
