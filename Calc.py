@@ -4,7 +4,7 @@ if "#" in task:
     result1 = eval(task.replace("#", "%"))
     print(str(task) + " => " + str(result1))
 
-if "!" in task:
+elif "!" in task:
     first, second = task.split("!")
 
     first_num = map(int, first)
@@ -38,5 +38,6 @@ elif "$" in task:
         print(str(first) + "$" + str(second) + " => " + str(second))
     else:
         print(str(first) + "$" + str(second) + " => " + str(first))
+
 else:
     print("нет такой команды")
