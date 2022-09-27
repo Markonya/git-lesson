@@ -13,31 +13,26 @@ elif "!" in task:
     second_num = map(int, second)
     sum2 = sum(second_num)
 
-    if sum1 == sum2:
-        print(str(first) + "!" + str(second) + " => " + str(first))
-    elif sum1 > sum2:
+    if sum1 >= sum2:
         print(str(first) + "!" + str(second) + " => " + str(first))
     else:
         print(str(first) + "!" + str(second) + " => " + str(second))
 
 elif "@" in task:
     first, second = task.split("@")
-    if second == first:
+    if second < first:
         print(str(first) + "@" + str(second) + " => " + str(first))
-    elif second > first:
-        print(str(first) + "@" + str(second) + " => " + str(second))
     else:
-        print(str(first) + "@" + str(second) + " => " + str(first))
+        print(str(first) + "@" + str(second) + " => " + str(second))
+
 
 
 elif "$" in task:
     first, second = task.split("$")
-    if len(first) == len(second):
+    if len(first) < len(second):
         print(str(first) + "$" + str(second) + " => " + str(first))
-    elif len(second) > len(first):
-        print(str(first) + "$" + str(second) + " => " + str(second))
     else:
-        print(str(first) + "$" + str(second) + " => " + str(first))
+        print(str(first) + "$" + str(second) + " => " + str(second))
 
 else:
     print("нет такой команды")
