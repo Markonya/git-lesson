@@ -13,5 +13,3 @@ def count_regions():
         """)
         res = cursor.fetchall()
         print(res)
-    conn.commit()
-    conn.close()
