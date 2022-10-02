@@ -12,3 +12,4 @@ with open('towns.csv', 'r', encoding='utf8') as fin:
 cur.executemany("""INSERT INTO database ('region.name', 'city.name') VALUES (?,?);""", to_db)
 con.commit()
 con.close()
+
