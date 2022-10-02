@@ -6,7 +6,7 @@ url = ("https://raw.githubusercontent.com/"
        "epogrebnyak/ru-cities/main/assets/towns.csv")
 
 path = Path("towns.csv")
-if not p.exists():
+if not path.exists():
     content = requests.get(url).text
     path.write_text(content, encoding="utf-8")
 
