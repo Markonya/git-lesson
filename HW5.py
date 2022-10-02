@@ -44,6 +44,6 @@ def conversation():
         return 'undefined'
 
 
-print(conversation())
+print('Номер телефона: ', conversation())
 # Ответ доп. задание:
 # Словарь-справочник это глобальный объект (переменная), внутри функции мы обращаемся к ней
