@@ -1,6 +1,6 @@
 import sqlite3
 
-
+# тут совсем сыро, еще думаю
 def count_regions():
     with sqlite3.connect("cities.db") as conn:
         cursor = conn.cursor()
