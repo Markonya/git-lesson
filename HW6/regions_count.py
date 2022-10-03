@@ -7,7 +7,7 @@ def count_regions():
         cursor.executemany("""SELECT 
         "region.name" as region, 
         COUNT("city.name") as city 
-        FROM database WHERE region.id = city.id
+        FROM region WHERE region.id = city.id
         GROUP BY
         city.id
         """)
