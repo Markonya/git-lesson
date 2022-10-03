@@ -2,8 +2,8 @@ import sqlite3
 
 
 def search_cities():
-    with sqlite3.connect("cities.db") as conn:
-        cursor = conn.cursor()
+    with sqlite3.connect("cities.db") as con:
+        cursor = con.cursor()
         cursor.executemany("""
         SELECT "city.name" 
         FROM city

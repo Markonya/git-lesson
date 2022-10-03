@@ -5,11 +5,11 @@ def count_regions():
     with sqlite3.connect("cities.db") as conn:
         cursor = conn.cursor()
         cursor.executemany("""SELECT 
-        "region.name" as region, 
-        COUNT("city.name") as city 
-        FROM region WHERE region.id = city.id
+        "region.name", 
+        COUNT("city.name") 
+        FROM region WHERE region_id = id
         GROUP BY
-        city.id
+        'region.name'
         """)
         res = cursor.fetchall()
         print(res)
