@@ -1,15 +1,11 @@
 import sqlite3
 
-# тут совсем сыро, еще надо думать
-def count_regions():
-    with sqlite3.connect("cities.db") as conn:
-        cursor = conn.cursor()
-        cursor.executemany("""SELECT 
-        "region.name", 
-        COUNT("city.name") 
-        FROM region WHERE region_id = id
-        GROUP BY
-        'region.name'
-        """)
-        res = cursor.fetchall()
-        print(res)
+with sqlite3.connect("cities.db") as connection:
+    cursor = connection.cursor()
+    result = cursor.execute("""
+        SELECT region.name, count(city.id) 
+        FROM city, region 
+        WHERE city.region_id = region.id 
+        GROUP BY city.region_id;
+    """)
+    print(*['{0} - {1}'.format(*item) for item in sorted(result.fetchall())], sep='\n')
