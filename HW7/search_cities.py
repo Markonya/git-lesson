@@ -1,5 +1,4 @@
 import sqlite3
-from create_database import regions
 
 # search_key = input('Введите регион: ')
 search_key = 'Архангельская область'
